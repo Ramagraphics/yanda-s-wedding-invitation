@@ -1,0 +1,431 @@
+:root {
+    --primary-color: #8a6240; /* A warm, sophisticated brown */
+    --secondary-color: #f3e9e0; /* A soft, creamy beige */
+    --text-color: #4a2e2a; /* A deep, rich brown for text */
+    --background-color: #fdfaf6; /* A very light, almost white background */
+    --accent-color: #c4a78c; /* A muted gold for accents */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', 'Tiro Telugu', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.8;
+    overflow: hidden; /* Prevent scrolling before opening */
+}
+
+.font-esthetic {
+    font-family: 'Niconne', cursive;
+    font-weight: normal;
+}
+.font-estheticc {
+    font-family: 'Niconne', cursive;
+    font-weight: normal;
+    color: #f3e9e0;
+}
+.font-estheticcc {
+    font-family: 'Niconne', cursive;
+    font-weight: normal;
+    color: #f3e9e0;
+    line-height: 1;
+}
+
+/* --- FLOWER ANIMATION --- */
+#flower-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 999;
+    overflow: hidden;
+}
+
+.flower {
+    position: absolute;
+    top: -10%;
+    font-size: 20px;
+    color: white;
+    opacity: 0.7;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(105vh) rotate(360deg);
+    }
+}
+
+/* --- WELCOME OVERLAY --- */
+#welcome-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: opacity 0.8s ease-out, visibility 0.8s;
+}
+
+.welcome-card {
+    background: var(--background-color);
+    padding: 2rem 3rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    transform: scale(0.9);
+    opacity: 0;
+    animation: popIn 0.8s 0.3s forwards;
+}
+
+@keyframes popIn {
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* --- GRAPHICAL PLACEHOLDERS --- */
+.welcome-graphic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: var(--secondary-color);
+    border: 5px solid white;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    margin: 1rem auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Niconne', cursive;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+}
+
+.person-graphic {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: white;
+    border: 8px solid white;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    margin: 0 auto 1rem auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Niconne', cursive;
+    font-size: 5rem;
+    color: var(--primary-color);
+}
+
+.person-graphic::before {
+    content: attr(data-initial); /* This adds the initial from the HTML */
+}
+
+.welcome-card h1 {
+    font-size: 3rem;
+    color: var(--primary-color);
+}
+.welcome-card h2 {
+    font-size: 1.5rem;
+    color: var(--text-color);
+}
+.welcome-card p {
+    margin-top: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.main-button {
+    background: var(--primary-color);
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 1.5rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.main-button:hover {
+    background: var(--text-color);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+/* --- MAIN CONTENT & HERO SECTION --- */
+#main-content {
+    display: none; /* Hidden until invitation is opened */
+}
+
+.hero-section {
+    height: 100vh;
+    background: linear-gradient(rgba(74,46,42,0.6), rgba(74,46,42,0.6)), url('https://via.placeholder.com/1200x800.png?text=Wedding+Background') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    opacity: 0;
+    animation: fadeIn 1s 0.5s forwards;
+}
+
+.scrolling-text {
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    color: white;
+}
+
+.scrolling-text.animate-scroll {
+    animation: scrollText 15s linear infinite;
+}
+
+@keyframes scrollText {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+.hero-content .animate-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: scrollUp 1s forwards;
+}
+
+.hero-content p:nth-child(2) { animation-delay: 0.8s; }
+.hero-content h1:nth-child(3) { animation-delay: 1.1s; }
+.hero-content p:nth-child(4) { animation-delay: 1.4s; }
+.hero-content p:nth-child(5) { animation-delay: 1.7s; }
+
+@keyframes scrollUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-content h1 {
+    font-size: 6rem;
+    margin: 0.5rem 0;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+}
+
+.hero-content .date {
+    background: rgba(0,0,0,0.3);
+    padding: 8px 20px;
+    border-radius: 50px;
+    display: inline-block;
+    margin-top: 1rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+/* --- GENERAL SECTION STYLING --- */
+.section {
+    padding: 5rem 10%;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 3.5rem;
+    color: var(--primary-color);
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: var(--accent-color);
+    margin: 10px auto 0;
+}
+
+/* --- COUPLE SECTION --- */
+.couple-section { background-color: var(--secondary-color); }
+.couple-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+.person-card {
+    background: var(--background-color);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+.person-card h3 {
+    font-size: 2.5rem;
+    margin-top: 1rem;
+    color: var(--primary-color);
+}
+.ampersand {
+    font-size: 4rem;
+    color: var(--primary-color);
+}
+
+/* --- EVENT SECTION & TIMELINE --- */
+.timeline {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto 3rem;
+}
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background-color: var(--secondary-color);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -2px;
+}
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    width: 50%;
+}
+.timeline-item:nth-child(odd) { left: 0; }
+.timeline-item:nth-child(even) { left: 50%; text-align: left; }
+.timeline-item:nth-child(even) .timeline-content {
+    background-color: var(--secondary-color);
+}
+.timeline-content {
+    padding: 20px 30px;
+    background-color: white;
+    position: relative;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+.timeline-icon {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    right: -25px;
+    background-color: var(--background-color);
+    border: 4px solid var(--primary-color);
+    top: 32px;
+    border-radius: 50%;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+}
+.timeline-item:nth-child(even) .timeline-icon {
+    left: -25px;
+}
+
+/* --- FOOTER --- */
+footer {
+    padding: 4rem 10%;
+    text-align: center;
+    background-color: var(--text-color);
+    color: var(--secondary-color);
+}
+footer h2 {
+    font-size: 3rem;
+}
+footer h3 {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    color: var(--accent-color);
+}
+
+/* --- FLOATING BUTTONS --- */
+.floating-buttons {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.floating-buttons button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    background: var(--primary-color);
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: background-color 0.3s;
+}
+.floating-buttons button:hover {
+    background: var(--text-color);
+}
+.lang-switcher {
+    display: flex;
+    flex-direction: column;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+.lang-switcher button {
+    width: 50px;
+    height: 40px;
+    border-radius: 0;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    font-weight: bold;
+}
+.lang-switcher button.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* --- FADE IN & SCROLL ANIMATIONS --- */
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- RESPONSIVE DESIGN --- */
+@media (max-width: 768px) {
+    .section { padding: 4rem 5%; }
+    .hero-content h1 { font-size: 4rem; }
+    .timeline::after { left: 25px; }
+    .timeline-item { width: 100%; padding-left: 60px; padding-right: 15px; }
+    .timeline-item:nth-child(even) { left: 0; text-align: left; }
+    .timeline-icon { left: 0; }
+}

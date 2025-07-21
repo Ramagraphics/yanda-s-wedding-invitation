@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Wedding of Premkumar & Madhu</title>
+    <meta name="description" content="Join us for the wedding celebration of Premkumar and Madhu.">
+    <meta property="og:title" content="The Wedding of Premkumar & Madhu">
+    <meta property="og:description" content="We joyfully invite you to celebrate our union.">
+    <meta property="og:type" content="website">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Niconne&family=Tiro+Telugu&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- OVERLAY & WELCOME SCREEN -->
+    <div id="welcome-overlay">
+        <div class="welcome-card">
+            <h2 class="font-esthetic" data-lang="wedding_of">The Wedding of</h2>
+            <div class="welcome-graphic">P & M</div>
+            <h1 class="font-esthetic" data-lang="couple_name">Premkumar & Madhu</h1>
+            <p data-lang="dear_guest">Dear Guest,</p>
+            <button id="open-invitation" class="main-button">
+                <i class="fas fa-envelope-open"></i> <span data-lang="open_invitation">Open Invitation</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main-content">
+        <!-- New Flower Container -->
+        <div id="flower-container"></div>
+
+        <!-- HEADER SECTION -->
+        <header class="hero-section">
+            <div class="hero-content">
+                <p class="animate-scroll" data-lang="together_with_families">Yanda's Wedding Invitation</p>
+                <h1 class="font-esthetic animate-scroll" data-lang="couple_name">Premakumar & Madhu</h1>
+                <p class="animate-scroll" data-lang="invite_you">joyfully invite you to celebrate their wedding</p>
+                <p class="date animate-scroll" data-lang="wedding_date">11 OCTOBER 2025</p>
+            </div>
+        </header>
+        
+        <!-- COUPLE SECTION -->
+        <section class="section couple-section">
+            <h2 class="section-title font-esthetic" data-lang="the_couple">The Couple</h2>
+            <div class="couple-container">
+                <div class="person-card animate-on-scroll">
+                    <div class="person-graphic" data-initial="P"></div>
+                    <h3 class="font-esthetic" data-lang="groom_name">Premakumar</h3>
+                    <p data-lang="son_of">Son of</p>
+                    <p data-lang="groom_parents">Sri & Smt. Yanda Venkatarao & Krishnaveni</p>
+                </div>
+                <div class="ampersand font-esthetic">&</div>
+                <div class="person-card animate-on-scroll">
+                    <div class="person-graphic" data-initial="M"></div>
+                    <h3 class="font-esthetic" data-lang="bride_name">Madhu</h3>
+                    <p data-lang="daughter_of">Daughter of</p>
+                    <p data-lang="bride_parents">Sri & Smt. Jayan Deepak & sushma</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- EVENT DETAILS SECTION -->
+        <section class="section event-section">
+            <h2 class="section-title font-esthetic" data-lang="event_details">Event Details</h2>
+            <div class="timeline">
+                <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-icon"><i class="fas fa-ring"></i></div>
+                    <div class="timeline-content">
+                        <h3 data-lang="ceremony">Wedding Ceremony</h3>
+                        <p><i class="far fa-calendar-alt"></i> <span data-lang="ceremony_date">Saturday, 11th October 2025</span></p>
+                        <p><i class="far fa-clock"></i> <span data-lang="ceremony_time">Night 08-42 PM</span></p>
+                        <p><i class="fas fa-map-marker-alt"></i> <span data-lang="venue">Krishnaveni kalyanamadapam, Hiramandalam</span></p>
+                    </div>
+                </div>
+                <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-icon"><i class="fas fa-utensils"></i></div>
+                    <div class="timeline-content">
+                        <h3 data-lang="reception">Reception</h3>
+                        <p><i class="far fa-calendar-alt"></i> <span data-lang="reception_date">Saturday, 11th October 2025</span></p>
+                        <p><i class="far fa-clock"></i> <span data-lang="reception_time">12:00 PM onwards</span></p>
+                        <p><i class="fas fa-map-marker-alt"></i> <span data-lang="venue">Krishnaveni kalyanamadapam, Hiramandalam</span></p>
+                    </div>
+                </div>
+            </div>
+            <a href="https://maps.app.goo.gl/f28U8ZtQDJJmG4rm9" target="_blank" class="main-button animate-on-scroll"><i class="fas fa-map-marked-alt"></i> <span data-lang="view_map">View Map</span></a>
+        </section>
+
+        <!-- FOOTER -->
+        <footer>
+            <h2 class="font-esthetic" data-lang="thank_you">Thank You</h2>
+            <p data-lang="looking_forward">We are excited to celebrate our special day with you!</p>
+            <h3 class="font-esthetic" data-lang="hashtag">#PremWedsMadhu</h3>
+            <h3 class="font-estheticc" data-lang="hashtagg">Designed By:Rama Graphics</h3>
+            <h3 class="font-estheticcc" data-lang="cell">cell: "Cell:9490446815"</h3>
+            
+
+        </footer>
+    </div>
+
+    <!-- FLOATING ACTION BUTTONS -->
+    <div class="floating-buttons">
+        <button id="music-toggle"><i class="fas fa-volume-mute"></i></button>
+        <div class="lang-switcher">
+            <button id="lang-en" class="active">EN</button>
+            <button id="lang-te">తె</button>
+        </div>
+    </div>
+    
+    <audio id="bg-music" loop src="assets/music/background-music.mp3"></audio>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
